@@ -21,8 +21,11 @@ class FrontendController extends Controller
    	return view('frontend.master')
    	        ->with('home_content',$home);
    }
-   public function about(){
+  public function about(){
+    
+      $home=view('frontend.pages.about');
+      return view('frontend.master')
+               ->with('home_content',$home);
+           }
 
-   	print("about Laravel");
-   }
 }

@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 
 Route::get('/', [FrontendController::class, 'home']);
-Route::get('/all-category', [FrontendController::class, 'all_category']);
 Route::get('/about', [FrontendController::class, 'about']);
-Route::get('/contact', [FrontendController::class, 'contact']);
+
+Route::get('/all-category', [FrontendController::class, 'all_category']);
+
+Route::get('/contact', [FrontendController::class, 'home']);
