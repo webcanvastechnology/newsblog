@@ -25,4 +25,4 @@ Route::get('/about', [FrontendController::class, 'about']);
 
 Route::get('/all-category', [FrontendController::class, 'all_category']);
 
-Route::get('/contact', [FrontendController::class, 'home']);
+Route::get('/contact', [FrontendController::class, 'contact']);
