@@ -1,5 +1,5 @@
 @extend('admin-master')
-   @section('main-sidebar')
+   @section('main-admin')
 
 
 
