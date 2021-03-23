@@ -33,42 +33,44 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <!-- left column -->
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Category-Dashboard</h3>
+                <h3 class="card-title">Add Category</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Admin-id</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter id">
-                  </div>
-                  <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter id">
+                    <label for="exampleInputEmail1">Category Name</label>
+                    <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Category Name">
                   </div>
                   
-                  <div class="row">
-                    <div class="col-sm-6">
+                  <div class="col-sm-6">
                       <!-- select -->
                       <div class="form-group">
-                        <label>Publication Status</label>
-                        <select class="form-control">
-                          <option>Public</option>
-                          <option>Private</option>
+                        <label>Status</label>
+                        <select class="form-control" name="status">
+                          <option>--Select--</option>
+                          <option value="1">Publish</option>
+                          <option value="0">Unpublish</option>
+                         
                         </select>
                       </div>
                     </div>
-                  </div>
+                  
+                  
                 </div>
-              </div>
-            </form>
-          </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
         </div>
       </div>
     </div>
