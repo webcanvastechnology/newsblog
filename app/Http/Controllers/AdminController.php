@@ -11,4 +11,21 @@ class AdminController extends Controller
     	return view('admin.admin-master')
     			->with('admin_content',$dashboard);
     }
+
+    public function add_category(){
+        $add_category=view('admin.pages.add_category');
+        return view('admin.admin-master')
+                ->with('admin_content', $add_category);
+    }
+    public function add_blog(){
+        $add_blog=view('admin.pages.add_blog');
+        return view('admin.admin-master')
+                ->with('admin_content', $add_blog);
+    }
+
+    public function admin_adminblog(){
+    	$dashboard=view('admin.pages.adminblog');
+    	return view('admin.admin-master')
+    			->with('admin_content',$dashboard);
+    }
 }
