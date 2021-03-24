@@ -24,8 +24,10 @@ Route::get('/', function () {
 Route::get('/admin-dashboard', [AdminController::class, 'admin_dashboard']);
 Route::get('/add-category', [AdminController::class, 'add_category']);
 Route::get('/manage-category', [AdminController::class, 'manage_category']);
+Route::get('/manage-blog', [AdminController::class, 'manage_blog']);
 Route::get('/add-blog', [AdminController::class, 'add_blog']);
 Route::get('/admin-adminblog', [AdminController::class, 'admin_adminblog']);
+Route::get('/login', [AdminController::class, 'login']);
 
 
 Route::get('/', [FrontendController::class, 'home']);

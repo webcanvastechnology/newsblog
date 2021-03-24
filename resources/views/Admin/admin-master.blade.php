@@ -19,7 +19,13 @@
   <link rel="stylesheet" href="{{asset('public/Admin')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="{{asset('public/Admin')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+ 
+
+
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -249,7 +255,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="{{URL::to('/manage-blog')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Blog</p>
                 </a>
@@ -309,7 +315,7 @@
 <script src="{{asset('public/Admin')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('public/Admin')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<script>
+
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
