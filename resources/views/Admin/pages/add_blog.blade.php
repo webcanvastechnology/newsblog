@@ -50,7 +50,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Blog Title" name="blog_title">
+                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Nmae">
                   </div>
 
                   <div class="form-group">
