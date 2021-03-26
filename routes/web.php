@@ -22,7 +22,10 @@ Route::get('/', function () {
 
 
 Route::get('/admin-dashboard', [AdminController::class, 'admin_dashboard']);
+
 Route::get('/add-category', [AdminController::class, 'add_category']);
+Route::post('/save-category', [AdminController::class, 'save_category'])->name('savecategory');
+
 Route::get('/manage-category', [AdminController::class, 'manage_category']);
 Route::get('/manage-blog', [AdminController::class, 'manage_blog']);
 Route::get('/add-blog', [AdminController::class, 'add_blog']);

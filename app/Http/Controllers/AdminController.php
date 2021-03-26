@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,16 @@ class AdminController extends Controller
         return view('admin.admin-master')
                 ->with('admin_content', $add_category);
     }
+
+     public function save_category(Request $request){
+        $data=array();
+        $data['category_name']=$request->category_name;
+        $data['status']=$request->status;
+        $data['created_at']=date('Y-m-d H:i:s');
+        DB::table('tbl_category')->insert($data);
+        return redirect()->back();
+    }
+
      public function manage_category(){
         $manage_category=view('admin.pages.manage_category');
         return view('admin.admin-master')
