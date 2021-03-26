@@ -42,11 +42,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{route('savecategory')}}" method="POST">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Name</label>
-                    <input type="text" class="form-control" id="cat_name" name="cat_name" placeholder="Category Name">
+                    <input type="text" class="form-control" id="cat_name" name="category_name" placeholder="Category Name">
                   </div>
                   
                   <div class="col-sm-6">
