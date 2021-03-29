@@ -29,7 +29,9 @@ class AdminController extends Controller
     }
 
      public function manage_category(){
-        $manage_category=view('admin.pages.manage_category');
+        $all_category=DB::table('tbl_category')->get();
+        $manage_category=view('admin.pages.manage_category')
+                        ->with('all_category',$all_category);
         return view('admin.admin-master')
                 ->with('admin_content', $manage_category);
     }
