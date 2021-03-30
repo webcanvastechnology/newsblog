@@ -46,16 +46,17 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{route('saveblog')}}" method="POST">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
-                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Nmae">
+                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Name">
                   </div>
 
                   <div class="form-group">
                         <label>Select Category</label>
-                        <select class="form-control" name="status">
+                        <select class="form-control" name="select_category">
                           <option>--Select--</option>
                           <option value="1">Sports</option>
                           <option value="2">Politics</option>
@@ -87,7 +88,7 @@
                 </div>
 
                 <div class="form-group">
-                        <label>Status</label>
+                        <label>status</label>
                         <select class="form-control" name="status">
                           <option>--Select--</option>
                           <option value="1">Publish</option>

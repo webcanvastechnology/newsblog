@@ -50,6 +50,18 @@ class AdminController extends Controller
         $add_blog=view('admin.pages.add_blog');
         return view('admin.admin-master')
                 ->with('admin_content', $add_blog);
+
+    }
+   
+     
+
+     public function save_blog(Request $request){
+        $data=array();
+        $data['blog_name']=$request->blog_name;
+        $data['status']=$request->status;
+        $data['created_at']=date('Y-m-d H:i:s');
+        DB::table('tbl_blog')->insert($data);
+        return redirect()->back();
     }
 
     public function admin_adminblog(){
