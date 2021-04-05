@@ -47,11 +47,11 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{route('saveblog')}}" method="POST">
-<<<<<<< HEAD
+                
                @csrf
-=======
+
                 @csrf
->>>>>>> 0384d75b1e042e6a30c3138540b414a5fc738c60
+
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
