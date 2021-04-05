@@ -60,7 +60,12 @@ class AdminController extends Controller
      public function save_blog(Request $request){
         $data=array();
         $data['blog_name']=$request->blog_name;
-        $data['status']=$request->status;
+        $data['file_input']=$request->file_input;
+        $data['short_desc']=$request->short_desc;
+         $data['long_desc']=$request->long_desc;
+          $data['status']=$request->status;
+
+        
         $data['created_at']=date('Y-m-d H:i:s');
         DB::table('tbl_blog')->insert($data);
         return redirect()->back();
