@@ -38,7 +38,9 @@ class AdminController extends Controller
     }
 
      public function manage_category(){
-        $manage_category=view('admin.pages.manage_category');
+        $all_category=DB::table('tbl_category')->get();
+        $manage_category=view('admin.pages.manage_category')
+                        ->with('all_category',$all_category);
         return view('admin.admin-master')
                 ->with('admin_content', $manage_category);
     }
@@ -59,6 +61,23 @@ class AdminController extends Controller
         $add_blog=view('admin.pages.add_blog');
         return view('admin.admin-master')
                 ->with('admin_content', $add_blog);
+
+    }
+   
+     
+
+     public function save_blog(Request $request){
+        $data=array();
+        $data['blog_name']=$request->blog_name;
+        $data['file_input']=$request->file_input;
+        $data['short_desc']=$request->short_desc;
+         $data['long_desc']=$request->long_desc;
+          $data['status']=$request->status;
+
+        
+        $data['created_at']=date('Y-m-d H:i:s');
+        DB::table('tbl_blog')->insert($data);
+        return redirect()->back();
     }
 
     public function admin_adminblog(){

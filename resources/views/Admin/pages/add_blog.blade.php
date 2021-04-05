@@ -47,11 +47,15 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{route('saveblog')}}" method="POST">
+<<<<<<< HEAD
                @csrf
+=======
+                @csrf
+>>>>>>> 0384d75b1e042e6a30c3138540b414a5fc738c60
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
-                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Nmae">
+                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Name">
                   </div>
 
                   <div class="form-group">
@@ -68,7 +72,7 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="exampleInputFile" name="file_input"  placeholder="File Input">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                       <div class="input-group-append">
@@ -88,7 +92,7 @@
                 </div>
 
                 <div class="form-group">
-                        <label>Status</label>
+                        <label>status</label>
                         <select class="form-control" name="status">
                           <option>--Select--</option>
                           <option value="1">Publish</option>
