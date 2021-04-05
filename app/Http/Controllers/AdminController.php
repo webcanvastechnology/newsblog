@@ -28,6 +28,15 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+     public function save_blog(Request $request){
+        $data=array();
+        $data['blog_title']=$request->blog_title;
+        $data['Status']=$request->status;
+        $data['created_at']=date('Y-m-d H:i:s');
+        DB::table('tbl_blog')->insert($data);
+        return redirect()->back();
+    }
+
      public function manage_category(){
         $manage_category=view('admin.pages.manage_category');
         return view('admin.admin-master')

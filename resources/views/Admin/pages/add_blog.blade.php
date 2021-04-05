@@ -46,7 +46,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{route('saveblog')}}" method="POST">
+               @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
@@ -55,7 +56,7 @@
 
                   <div class="form-group">
                         <label>Select Category</label>
-                        <select class="form-control" name="status">
+                        <select class="form-control" name="select_category">
                           <option>--Select--</option>
                           <option value="1">Sports</option>
                           <option value="2">Politics</option>

@@ -29,6 +29,8 @@ Route::post('/save-category', [AdminController::class, 'save_category'])->name('
 Route::get('/manage-category', [AdminController::class, 'manage_category']);
 Route::get('/manage-blog', [AdminController::class, 'manage_blog']);
 Route::get('/add-blog', [AdminController::class, 'add_blog']);
+Route::post('/save-blog', [AdminController::class, 'save_blog'])->name('saveblog');
+
 Route::get('/admin-adminblog', [AdminController::class, 'admin_adminblog']);
 Route::get('/login', [AdminController::class, 'login']);
 
