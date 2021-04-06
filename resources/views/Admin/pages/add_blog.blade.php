@@ -50,20 +50,21 @@
                 
                @csrf
 
-                @csrf
+                
 
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Blog Title</label>
-                    <input type="text" class="form-control" id="blog_name" placeholder="blog_name" name="Blog Name">
+                <input type="text" class="form-control" id="blog_name" placeholder="Input here" name="blog_title">
                   </div>
 
                   <div class="form-group">
                         <label>Select Category</label>
-                        <select class="form-control" name="select_category">
+                        <select class="form-control" name="category_id">
                           <option>--Select--</option>
-                          <option value="1">Sports</option>
-                          <option value="2">Politics</option>
+                          @foreach($all_category as $v_category)
+                          <option value="{{$v_category->id}}">{{$v_category->category_name}}</option>
+                          @endforeach
                          
                         </select>
                       </div>
@@ -72,7 +73,7 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="file_input"  placeholder="File Input">
+                        <input type="file" class="custom-file-input" id="exampleInputFile" name="blog_img"  placeholder="File Input">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                       <div class="input-group-append">

@@ -28,13 +28,17 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-     public function save_blog(Request $request){
-        $data=array();
-        $data['blog_title']=$request->blog_title;
-        $data['Status']=$request->status;
-        $data['created_at']=date('Y-m-d H:i:s');
-        DB::table('tbl_blog')->insert($data);
-        return redirect()->back();
+     public function save_blog(Request $request){              
+        $data=array();                                           
+        $data['blog_title']=$request->blog_title;                   
+        $data['category_id']=$request->category_id; 
+        $data['blog_img']=$request->blog_img;            
+        $data['short_desc']=$request->short_desc;      
+        $data['long_desc']=$request->long_desc;              
+        $data['status']=$request->status;               
+        $data['created_at']=date('Y-m-d H:i:s');           
+        DB::table('tbl_blog')->insert($data);                        
+        return redirect()->back();              
     }
 
      public function manage_category(){
@@ -57,30 +61,15 @@ class AdminController extends Controller
         return view('admin.login')
                 ->with('admin_content', $login);
     }
-    public function add_blog(){
-        $add_blog=view('admin.pages.add_blog');
+    public function add_blog(){ 
+        $all_category=DB::table('tbl_category')->get();
+        $add_blog=view('admin.pages.add_blog')
+        ->with('all_category',$all_category);
         return view('admin.admin-master')
                 ->with('admin_content', $add_blog);
 
     }
-   
-     
-
-     public function save_blog(Request $request){
-        $data=array();
-        $data['blog_name']=$request->blog_name;
-        $data['file_input']=$request->file_input;
-        $data['short_desc']=$request->short_desc;
-         $data['long_desc']=$request->long_desc;
-          $data['status']=$request->status;
-
-        
-        $data['created_at']=date('Y-m-d H:i:s');
-        DB::table('tbl_blog')->insert($data);
-        return redirect()->back();
-    }
-
-    public function admin_adminblog(){
+        public function admin_adminblog(){
     	$dashboard=view('admin.pages.adminblog');
     	return view('admin.admin-master')
     			->with('admin_content',$dashboard);
