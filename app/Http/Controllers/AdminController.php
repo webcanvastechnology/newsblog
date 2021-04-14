@@ -50,7 +50,9 @@ class AdminController extends Controller
     }
 
      public function manage_blog(){
-        $manage_blog=view('admin.pages.manage_blog');
+        $manage_blog=DB::table('tbl_blog')->get();
+        $manage_blog=view('admin.pages.manage_blog')
+                           ->with('manage_blog',$manage_blog);
         return view('admin.admin-master')
                 ->with('admin_content', $manage_blog);
     }
