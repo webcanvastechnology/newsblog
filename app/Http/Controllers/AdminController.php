@@ -28,6 +28,24 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function edit_category($id){
+        $find_category=DB::table('tbl_category')->where('id',$id)->first();
+        $add_category=view('admin.pages.edit_category')
+                    ->with('find_category',$find_category);
+        return view('admin.admin-master')
+                ->with('admin_content', $add_category);
+    }
+
+     public function update_category(Request $request){
+         $category_id=$request->category_id;
+        $data=array();
+        $data['category_name']=$request->category_name;
+        $data['status']=$request->status;
+        $data['created_at']=date('Y-m-d H:i:s');
+        DB::table('tbl_category')->where('id',$category_id)->update($data);
+        return redirect()->back();
+    }
+
      public function save_blog(Request $request){              
         $data=array();                                           
         $data['blog_title']=$request->blog_title;                   

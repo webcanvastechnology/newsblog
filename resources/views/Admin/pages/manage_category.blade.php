@@ -61,7 +61,7 @@
                     @else
                     <td><i class="far fa-thumbs-down fa-2x" style="color: red;"></i></td>
                     @endif
-                    <td>Edit</td>
+                    <td><a href="{{URL::to('edit-category/'.$v_category->id)}}">Edit</a></td>
                     
                   </tr>
                   @endforeach
