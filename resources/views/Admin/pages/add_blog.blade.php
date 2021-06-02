@@ -46,7 +46,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('saveblog')}}" method="POST">
+              <form action="{{route('saveblog')}}" method="POST" enctype="multipart/form-data">
                 
                @csrf
 
@@ -69,7 +69,7 @@
                         </select>
                       </div>
                   
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
@@ -80,7 +80,15 @@
                         <span class="input-group-text">Upload</span>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
+
+                  <div class="control-group">
+                                    <label class="control-label">Blog Image</label>
+                                    <div class="controls">
+                                        <input type="file" class="default" name="blog_img">
+                                    </div>
+                                </div>
+
 
                    <div class="form-group">
                     <label for="exampleInputPassword1">Short Description</label>

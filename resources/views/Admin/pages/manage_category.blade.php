@@ -48,6 +48,7 @@
                     <th>Category Name</th>
                     <th>Status</th>
                     <th>Action</th>
+                    <th>Trash</th>
                     
                   </tr>
                   </thead>
@@ -62,6 +63,7 @@
                     <td><i class="far fa-thumbs-down fa-2x" style="color: red;"></i></td>
                     @endif
                     <td><a href="{{URL::to('edit-category/'.$v_category->id)}}">Edit</a></td>
+                     <td><a href="{{URL::to('delete-category/'.$v_category->id)}}">Delete</a></td>
                     
                   </tr>
                   @endforeach

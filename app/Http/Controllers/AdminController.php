@@ -45,17 +45,31 @@ class AdminController extends Controller
         DB::table('tbl_category')->where('id',$category_id)->update($data);
         return redirect()->back();
     }
+     public function delete_category($id){
+        DB::table('tbl_category')->where('id',$id)->delete();
+        return redirect()->back();
+    }
 
      public function save_blog(Request $request){              
         $data=array();                                           
         $data['blog_title']=$request->blog_title;                   
         $data['category_id']=$request->category_id; 
-        $data['blog_img']=$request->blog_img;            
+       // $data['blog_img']=$request->blog_img;            
         $data['short_desc']=$request->short_desc;      
         $data['long_desc']=$request->long_desc;              
         $data['status']=$request->status;               
-        $data['created_at']=date('Y-m-d H:i:s');           
-        DB::table('tbl_blog')->insert($data);                        
+        $data['created_at']=date('Y-m-d H:i:s');  
+        $images = $request->file('blog_img');
+        if($request->hasFile('blog_img'))
+        {
+             $imageName = $images->getClientOriginalName();
+
+        $images->move(public_path('blog_img'),$imageName);
+
+        $data['blog_img']= $imageName;
+
+        DB::table('tbl_blog')->insert($data); 
+        }                       
         return redirect()->back();              
     }
 

@@ -27,6 +27,8 @@ Route::get('/add-category', [AdminController::class, 'add_category']);
 Route::post('/save-category', [AdminController::class, 'save_category'])->name('savecategory');
 
 Route::get('/edit-category/{id}', [AdminController::class, 'edit_category']);
+
+Route::get('/delete-category/{id}', [AdminController::class, 'delete_category']);
 Route::post('/update-category', [AdminController::class, 'update_category'])->name('updatecategory');
 
 Route::get('/manage-category', [AdminController::class, 'manage_category']);
