@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class FrontendController extends Controller
 {
      public function home(){
-    $home=view('frontend.pages.home');
+      $all_blog=DB::table('tbl_blog')->get();
+    $home=view('frontend.pages.home')
+         ->with('all_blog',$all_blog);
    	return view('frontend.master')
    	        ->with('home_content',$home);
    }

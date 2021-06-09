@@ -88,9 +88,7 @@ class AdminController extends Controller
         return view('admin.admin-master')
                 ->with('admin_content', $manage_blog);
     }
-
-
-     public function login(){
+        public function login(){
         $login=view('admin.login');
         return view('admin.login')
                 ->with('admin_content', $login);
@@ -102,6 +100,17 @@ class AdminController extends Controller
         return view('admin.admin-master')
                 ->with('admin_content', $add_blog);
 
+    }
+    public function edit_blog($id){
+        $find_category=DB::table('tbl_blog')->where('id',$id)->first();
+        $add_category=view('admin.pages.edit_blog')
+                    ->with('find_blog',$find_blog);
+        return view('admin.admin-master')
+                ->with('admin_content', $add_blog);
+    }
+    public function delete_blog($id){
+        DB::table('tbl_blog')->where('id',$id)->delete();
+        return redirect()->back();
     }
         public function admin_adminblog(){
     	$dashboard=view('admin.pages.adminblog');

@@ -51,7 +51,8 @@
                     <th>Short Description</th>
                     <th>Long Description</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th>Edit</th>
+                    <th>Trash</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -68,8 +69,8 @@
                     @else
                     <td><i class="far fa-thumbs-down fa-2x" style="color: red;"></i></td>
                     @endif
-                    <td> Edit</td>
-                    >
+                    <td><a href="{{URL::to('edit-blog/'.$v_blog->id)}}">Edit</a></td>
+                    <td><a href="{{URL::to('delete-blog/'.$v_blog->id)}}">Delete</a></td>
                   </tr>
                   @endforeach
                   </tbody>
