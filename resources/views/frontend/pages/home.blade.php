@@ -340,7 +340,7 @@
 										<div class="hz_bottom_post">
 
 											<div class="hz_read_more">
-												<a href="#">Read More</a>
+												<a href="{{URL::to('blog-details/'.$v_blog->id)}}">Read More</a>
 											</div>
 
 											<div class="hz_icon_shere">

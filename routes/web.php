@@ -50,6 +50,7 @@ Route::get('/login', [AdminController::class, 'login']);
 
 Route::get('/', [FrontendController::class, 'home']);
 Route::get('/about', [FrontendController::class, 'about']);
+Route::get('/blog-details/{id}', [FrontendController::class, 'blog_details']);
 
 Route::get('/all-category', [FrontendController::class, 'all_category']);
 

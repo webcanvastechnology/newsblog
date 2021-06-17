@@ -30,5 +30,14 @@ class FrontendController extends Controller
       return view('frontend.master')
                ->with('home_content',$home);
            }
+           public function blog_details($id){
+            $find_blog=DB::table('tbl_blog')->where('id',$id)->first();
+
+    
+      $home=view('frontend.pages.blogdetails')
+      ->with('find_blog',$find_blog);
+      return view('frontend.master')
+               ->with('home_content',$home);
+           }
 
 }
