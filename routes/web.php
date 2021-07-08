@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SuperAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,31 +22,32 @@ Route::get('/', function () {
 */
 
 
-Route::get('/admin-dashboard', [AdminController::class, 'admin_dashboard']);
+Route::get('/admin-dashboard', [SuperAdminController::class, 'admin_dashboard']);
 
-Route::get('/add-category', [AdminController::class, 'add_category']);
-Route::post('/save-category', [AdminController::class, 'save_category'])->name('savecategory');
+Route::get('/add-category', [SuperAdminController::class, 'add_category']);
+Route::post('/save-category', [SuperAdminController::class, 'save_category'])->name('savecategory');
 
-Route::get('/edit-category/{id}', [AdminController::class, 'edit_category']);
+Route::get('/edit-category/{id}', [SuperAdminController::class, 'edit_category']);
 
-Route::get('/delete-category/{id}', [AdminController::class, 'delete_category']);
-Route::post('/update-category', [AdminController::class, 'update_category'])->name('updatecategory');
+Route::get('/delete-category/{id}', [SuperAdminController::class, 'delete_category']);
+Route::post('/update-category', [SuperAdminController::class, 'update_category'])->name('updatecategory');
 
-Route::get('/manage-category', [AdminController::class, 'manage_category']);
+Route::get('/manage-category', [SuperAdminController::class, 'manage_category']);
 
 
 
-Route::get('/manage-blog', [AdminController::class, 'manage_blog']);
+Route::get('/manage-blog', [SuperAdminController::class, 'manage_blog']);
 
-Route::get('/add-blog', [AdminController::class, 'add_blog']);
-Route::post('/save-blog', [AdminController::class, 'save_blog'])->name('saveblog');
+Route::get('/add-blog', [SuperAdminController::class, 'add_blog']);
+Route::post('/save-blog', [SuperAdminController::class, 'save_blog'])->name('saveblog');
 
-Route::get('/edit-blog/{id}', [AdminController::class, 'edit_blog']);
-Route::get('/delete-blog/{id}', [AdminController::class, 'delete_blog']);
+Route::get('/edit-blog/{id}', [SuperAdminController::class, 'edit_blog']);
+Route::get('/delete-blog/{id}', [SuperAdminController::class, 'delete_blog']);
 
 
 
 Route::get('/login', [AdminController::class, 'login']);
+Route::post('/login-check', [AdminController::class, 'login_check'])->name('logincheck');
 
 
 Route::get('/', [FrontendController::class, 'home']);
